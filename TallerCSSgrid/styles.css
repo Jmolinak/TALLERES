@@ -1,0 +1,141 @@
+.header {
+  grid-area: header;
+  background-color: rgb(172, 120, 103);
+
+}
+
+.menu {
+  grid-area: menu;
+  background-color: rgb(143, 52, 67);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.main {
+  grid-area: main;
+  background-color: chartreuse;
+}
+
+
+.footer {
+  grid-area: footer;
+  background-color: blue;
+}
+
+
+.page {  
+  
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu main main main .'
+    'footer footer footer footer footer .';
+  background-color: rgb(45, 13, 104);
+  gap: 3px
+}
+
+.page .header #log {
+  width: 10%;
+  float: left;
+  top: 20%;
+  padding: 10px;
+}
+
+.page .header #per {
+  width: 4%;
+  float: right;
+  padding: 50px;
+  top: 50%;
+  border-radius: 50% 50%;
+}
+
+.page .header #h {
+  text-align: center;
+}
+
+.page .menu {
+  padding: 5%;
+  align-items: center;
+  width: 100%;
+
+}
+
+.main {
+  grid-area: main;
+  background-color: rgb(104, 62, 173);
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-auto-rows: 200px;
+  grid-gap: 7px;
+  position: relative;
+  justify-content: CENTER;
+}
+
+.main img {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s;
+  object-position: center;
+}
+
+.main img:hover {
+  transform: translateY(-5px) scale(1.06);
+}
+
+.main img:first-child {
+  grid-column: 1 / span 3;
+  width: 100%;
+}
+
+.main img:nth-child(10) {
+  grid-column: 4;
+  grid-row: 3 / span 3;
+}
+
+.main img:nth-child(14) {
+  grid-column: 1 / span 2;
+  width: 100%;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgb(109, 39, 109);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-auto-rows: auto;
+  grid-gap: 7px;
+  position: relative;
+  justify-content: CENTER;
+  padding: 1%;
+}
+
+.footer img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1s;
+  border-radius: 50% 50% 50% 50%;
+}
+
+.footer img:hover {
+  transform: translateY(-5px) scale(1.06);
+}
+@media only screen and (max-width:80%) {
+  /* For tablets: */
+  .main {
+    width: 80%;  
+  }
+  .menu {
+    width: 80%;
+  }
+  .header {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:80%) {
+  /* For mobile phones: */
+  .page ,.menu, .main, .footer , .header{
+    width: 50%;
+  }
+}
